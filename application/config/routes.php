@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'welcome';
+//perusahaan
+$route['perusahaan']   = 'perusahaan';
+$route['perusahaan/pesanan']   = 'perusahaan/pesanan';
+
+
 //Driver
 $route['driver']   = 'driver';
 $route['driver/tugasBaru']   = 'driver/tugasBaru';

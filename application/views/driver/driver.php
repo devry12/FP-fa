@@ -24,7 +24,7 @@
           <td><?=$data['status_pengiriman']?></td>
           <form class="" action="" method="post">
             <input type="text" hidden name="idTransaksi" value="<?=$data['id_transaksi']?>">
-          <td><input type="submit" class="btn btn-primary" name="btnAmbil" value="Ambil"> </td>
+          <td><input type="submit" class="btn btn-primary" name="btnAmbil" value="Ambil"> <input type="submit" class="btn btn-danger" name="btnTolak" value="Tolak"> </td>
         </form>
 
         <?php endforeach; ?>

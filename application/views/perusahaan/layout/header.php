@@ -36,19 +36,20 @@
                       </a>
                     </li>
                     <li class="sidebar">
-                      <a href="/driver/tugasBaru" class="sidebar-nav-link">
+                      <a href="/perusahaan/pesanan" class="sidebar-nav-link">
                         <i class="icon-screen-tablet"></i>
-                        Tugas <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="Tugas Baru">4</span>
+
+                        Pesanan <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="Driver Menerima">4</span> <span class="badge badge-danger" data-toggle="tooltip" data-placement="top" title="Driver Menolak"><?=$GetNotifTolak?></span>
                       </a>
                     </li>
                     <li class="sidebar">
                       <a href="/driver/status" class="sidebar-nav-link">
                         <i class="icon-pencil"></i>
-                        Status
+                        Driver
                       </a>
                     </li>
                     <li class="sidebar">
-                      <a href="?p=driver/riwayat" class="sidebar-nav-link">
+                      <a href="/perusahaan/riwayat" class="sidebar-nav-link">
                         <i class="icon-pencil"></i>
                         Riwayat
                       </a>

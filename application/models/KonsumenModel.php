@@ -15,11 +15,10 @@
     {
       $this->load->helper('string');
       $data = [
-        'id_user'	=> $_SESSION['id_user'],
-        'nama_barang'	=> $this->input->post('nama_barang'),
+        'id_pembeli'	=> $_SESSION['id_user'],
+        'id_barang'	=> $this->input->post('nama_barang'),
         'jumlah_barang'		=> $this->input->post('jumlah_barang'),
         'tujuan'		=> $this->input->post('tujuan'),
-        'status'		=> "Mencari Driver",
       ];
       $this->db->insert('transaksi', $data);
     }
@@ -29,7 +28,8 @@
       $this->db->from('transaksi');
       $this->db->join('barang', 'transaksi.id_barang = barang.id_barang');
       $this->db->join('user', 'transaksi.id_driver = user.id_user');
-      $this->db->where('id_pengirim',$id);
+      $this->db->where('id_pembeli',$id);
+			$this->db->order_by("transaksi.tanggal", "DESC");
       $query = $this->db->get();
       return $query->result_array();
     }

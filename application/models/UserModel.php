@@ -47,4 +47,10 @@
 	    return $query->result_array();
 	  }
 
+		public function TugasSelesai(){
+			$this->db->set('status', "Ready");
+			$this->db->where('id_user',$this->input->post('id_driver'));
+			$this->db->update('user');
+		}
+
 }

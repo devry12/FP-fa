@@ -16,6 +16,8 @@ class Driver extends CI_Controller {
     $data['GetAllUser'] = $this->UserModel->GetAllUser($_SESSION['id_user']);
 		$this->load->view('driver/layout/header',$data);
 		$this->load->view('driver/index');
+    $this->load->view('driver/layout/footer');
+
 	}
 
 	public function tugasBaru()
@@ -32,10 +34,17 @@ class Driver extends CI_Controller {
     $data['GetAllTugasBar'] = $this->DriverModel->GetAllTugasBar();
 		$this->load->view('driver/layout/header',$data);
 		$this->load->view('driver/driver');
+    $this->load->view('driver/layout/footer');
   }else{
+    if ($this->input->post('btnAmbil') == "Ambil") {
       $this->DriverModel->UpdateTransaksi();
       $this->DriverModel->UpdateStatusDriver();
       redirect('/driver/status');
+    }else {
+      $this->DriverModel->TolakPesanan();
+      redirect('/driver/status');
+
+    }
   }
 	}
 
@@ -53,9 +62,17 @@ class Driver extends CI_Controller {
     $data['GetTugas']       = $this->DriverModel->GetTugas();
 		$this->load->view('driver/layout/header',$data);
 		$this->load->view('driver/status');
+    $this->load->view('driver/layout/footer');
+
   }else{
+    if ($this->input->post('btnUpdate') == "Update") {
       $this->DriverModel->UpdateLokasi();
       redirect('/driver');
+    }else {
+      $this->DriverModel->TugasSelesai();
+      $this->UserModel->TugasSelesai();
+      redirect('/driver');
+    }
   }
 	}
 

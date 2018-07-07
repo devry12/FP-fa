@@ -37,13 +37,13 @@ class User extends CI_Controller {
 			$_SESSION['id_user']    = $user[0]['id_user'];
 			$_SESSION['logged_in']  = true;
 			if ($user[0]['level'] == "Admin") {
-				redirect('admin/dashboard');
+				redirect('admin');
 			}elseif ($user[0]['level'] == "Perusahaan") {
-				redirect('perusahaan/dashboard');
+				redirect('perusahaan');
 			}elseif ($user[0]['level'] == "Driver") {
-				redirect('driver/dashboard');
+				redirect('driver');
 			}else {
-				redirect('user/dashboard');
+				redirect('user');
 			}
 
 	}
